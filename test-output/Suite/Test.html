@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jul 26 16:25:59 IST 2020</td>
+<td>Started on:</td><td>Tue Apr 21 00:28:11 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>54 seconds (54642 ms)</td>
+<tr><td>Total time:</td><td>13 seconds (13294 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,48 +67,31 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.leafBot.testcases.TC002_LoginForFailure.createLeaf()'><b>createLeaf</b><br>Test class: com.leafBot.testcases.TC002_LoginForFailure<br>Parameters: DemoSalesManager, , password was empty reenter</td>
-<td></td>
-<td>4</td>
-<td>com.leafBot.testcases.TC002_LoginForFailure@2f8dad04</td></tr>
-<tr>
-<td title='com.leafBot.testcases.TC001_LoginLogOut.createLeaf()'><b>createLeaf</b><br>Test class: com.leafBot.testcases.TC001_LoginLogOut<br>Parameters: DemoSalesManager, crmsfa</td>
-<td></td>
-<td>4</td>
-<td>com.leafBot.testcases.TC001_LoginLogOut@2bfc268b</td></tr>
-<tr>
-<td title='com.leafBot.testcases.TC002_LoginForFailure.createLeaf()'><b>createLeaf</b><br>Test class: com.leafBot.testcases.TC002_LoginForFailure<br>Parameters: , crmsfa, username was empty reenter</td>
-<td></td>
-<td>3</td>
-<td>com.leafBot.testcases.TC002_LoginForFailure@2f8dad04</td></tr>
-<tr>
-<td title='com.leafBot.testcases.TC001_LoginLogOut.createLeaf()'><b>createLeaf</b><br>Test class: com.leafBot.testcases.TC001_LoginLogOut<br>Parameters: DemoCSR, crmsfa</td>
-<td></td>
-<td>5</td>
-<td>com.leafBot.testcases.TC001_LoginLogOut@2bfc268b</td></tr>
-<tr>
-<td title='com.leafBot.testcases.TC002_LoginForFailure.createLeaf()'><b>createLeaf</b><br>Test class: com.leafBot.testcases.TC002_LoginForFailure<br>Parameters: DemoSalesManager1, crmsfa, User not found.</td>
-<td></td>
-<td>2</td>
-<td>com.leafBot.testcases.TC002_LoginForFailure@2f8dad04</td></tr>
-<tr>
-<td title='com.leafBot.testcases.TC001_LoginLogOut.createLeaf()'><b>createLeaf</b><br>Test class: com.leafBot.testcases.TC001_LoginLogOut<br>Parameters: DemoCSR2, crmsfa</td>
-<td></td>
-<td>3</td>
-<td>com.leafBot.testcases.TC001_LoginLogOut@2bfc268b</td></tr>
-<tr>
-<td title='com.leafBot.testcases.TC002_LoginForFailure.createLeaf()'><b>createLeaf</b><br>Test class: com.leafBot.testcases.TC002_LoginForFailure<br>Parameters: DemoSalesManager, crmsfa1, Password incorrect.</td>
-<td></td>
-<td>2</td>
-<td>com.leafBot.testcases.TC002_LoginForFailure@2f8dad04</td></tr>
+<td title='com.leafBot.testcases.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.leafBot.testcases.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC001 Login with valid credentials", "Login functionality of leaftaps application"</td>
+<td><div><pre>java.lang.NullPointerException
+	at utils.Reporter.reportStep(Reporter.java:62)
+	at utils.Reporter.reportStep(Reporter.java:71)
+	at com.leafBot.selenium.api.base.SeleniumBase.clearAndType(SeleniumBase.java:91)
+	at com.leafBot.pages.LoginPage.enterUsername(LoginPage.java:33)
+	at ?.enter username as Demosalesmanager(src\main\java\features\Login.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1091234211", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1091234211'><pre>java.lang.NullPointerException
+	at utils.Reporter.reportStep(Reporter.java:62)
+	at utils.Reporter.reportStep(Reporter.java:71)
+	at com.leafBot.selenium.api.base.SeleniumBase.clearAndType(SeleniumBase.java:91)
+	at com.leafBot.pages.LoginPage.enterUsername(LoginPage.java:33)
+	at ?.enter username as Demosalesmanager(src\main\java\features\Login.feature:5)
+</pre></div></td>
+<td>0</td>
+<td>com.leafBot.testcases.RunnerClass@18ce0030</td></tr>
 </table><p>
 </body>
 </html>

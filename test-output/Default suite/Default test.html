@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Jun 20 18:25:36 IST 2020</td>
+<td>Started on:</td><td>Sun Mar 22 12:15:50 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>25 seconds (25089 ms)</td>
+<tr><td>Total time:</td><td>53 seconds (53538 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,23 +67,31 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.leafBot.testcases.RunLogin.runScenario()'><b>runScenario</b><br>Test class: com.leafBot.testcases.RunLogin<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC001_Positive flow", "Leaftaps login functionality"</td>
-<td></td>
-<td>3</td>
-<td>com.leafBot.testcases.RunLogin@18ce0030</td></tr>
-<tr>
-<td title='com.leafBot.testcases.RunLogin.runScenario()'><b>runScenario</b><br>Test class: com.leafBot.testcases.RunLogin<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC001_Positive flow", "Leaftaps login functionality"</td>
-<td></td>
-<td>2</td>
-<td>com.leafBot.testcases.RunLogin@18ce0030</td></tr>
+<td title='com.leafBot.testcases.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.leafBot.testcases.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC001 Login with valid credentials", "Login functionality of leaftaps application"</td>
+<td><div><pre>java.lang.NullPointerException
+	at utils.Reporter.reportStep(Reporter.java:62)
+	at utils.Reporter.reportStep(Reporter.java:71)
+	at com.leafBot.selenium.api.base.SeleniumBase.clearAndType(SeleniumBase.java:91)
+	at com.leafBot.pages.LoginPage.enterUsername(LoginPage.java:33)
+	at ?.enter username as Demosalesmanager(src\main\java\features\Login.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2016482777", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2016482777'><pre>java.lang.NullPointerException
+	at utils.Reporter.reportStep(Reporter.java:62)
+	at utils.Reporter.reportStep(Reporter.java:71)
+	at com.leafBot.selenium.api.base.SeleniumBase.clearAndType(SeleniumBase.java:91)
+	at com.leafBot.pages.LoginPage.enterUsername(LoginPage.java:33)
+	at ?.enter username as Demosalesmanager(src\main\java\features\Login.feature:5)
+</pre></div></td>
+<td>41</td>
+<td>com.leafBot.testcases.RunnerClass@6f1de4c7</td></tr>
 </table><p>
 </body>
 </html>

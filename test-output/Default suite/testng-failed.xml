@@ -3,7 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.leafBot.testcases.RunLogin">
+      <class name="com.leafBot.testcases.RunnerClass">
         <methods>
           <include name="stopReport"/>
           <include name="beforeMethod"/>
@@ -12,10 +12,10 @@
           <include name="runScenario" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="startReport"/>
-          <include name="setData"/>
           <include name="tearDownClass"/>
+          <include name="setValues"/>
         </methods>
-      </class> <!-- com.leafBot.testcases.RunLogin -->
+      </class> <!-- com.leafBot.testcases.RunnerClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
