@@ -22,6 +22,7 @@ public class DataLibrary {
 				XSSFCell cell = row.getCell(j);
 				String stringCellValue = cell.getStringCellValue();
 				data[i-1][j] = stringCellValue;
+				System.out.println(stringCellValue);
 			} 
 		}
 		wbook.close();

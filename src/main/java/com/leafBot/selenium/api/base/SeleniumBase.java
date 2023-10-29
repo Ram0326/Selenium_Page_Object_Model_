@@ -32,7 +32,7 @@ import utils.Reporter;
 
 public class SeleniumBase extends Reporter implements Browser, Element{
 
-	public RemoteWebDriver driver;
+	public static RemoteWebDriver driver;
 	public WebDriverWait wait;
 
 	int i=1;

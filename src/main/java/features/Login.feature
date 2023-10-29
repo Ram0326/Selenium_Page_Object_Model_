@@ -1,13 +1,8 @@
-Feature: Leaftaps login functionality
+Feature: Login functionality of leaftaps application
 
-Scenario Outline: TC001_Positive flow
+Scenario: TC001 Login with valid credentials
 
-Given Enter the username as <username>
-And Enter the Password as <password>
-When Click on the Login
-Then Demo should be displayed in HomePage
-
-Examples:
-|username|password|
-|Demosalesmanager|crmsfa|
-|DemoCSR|crmsfa|
+Given enter username as Demosalesmanager
+And enter password as crmsfa
+When click on login button
+Then homepage should be dispalyed 

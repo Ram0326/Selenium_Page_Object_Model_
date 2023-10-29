@@ -2,10 +2,7 @@ package com.leafBot.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,50 +10,51 @@ import com.aventstack.extentreports.ExtentTest;
 import com.leafBot.testng.api.base.ProjectSpecificMethods;
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
 
 public class LoginPage extends ProjectSpecificMethods{
 	
-	public LoginPage(RemoteWebDriver driver, ExtentTest node) {
-		this.driver = driver;
-		this.node = node;
-		PageFactory.initElements(driver, this);
+	public LoginPage(){
+	//	this.driver = driver;
+		/*
+		 * this.driver = driver; this.node = node; 
+		 */
+		PageFactory.initElements(driver,this);
 	}
+	 
 	
 	
-	@FindBys({@FindBy(how = How.ID,using="username"),@FindBy(how = How.NAME,using="USERNAME")})
-	WebElement eleUsername;
-	
-	@CacheLookup
-	@FindAll({@FindBy(how = How.ID,using="password"),@FindBy(how = How.NAME,using = "PASSWORD")})
-	WebElement elePassword;
-	
-	@Given("Enter the username as (.*)")
-	public LoginPage enterUserName(String data) {	
-		clearAndType(eleUsername, data);
-		return this;
-	}	
+	@FindBy(how=How.ID,using="username")
+	private WebElement eleUsername;
 
-	@Given("Enter the Password as (.*)")
-	public LoginPage enterPassword(String data) {
-		clearAndType(elePassword, data);
-		return this;
-	}	
 	
-	@Given("Click on the Login")
-	public HomePage clickLogin() {
-		click(locateElement("class", "decorativeSubmit"));
-		return new HomePage(driver,node);		
-	}
-	
-	public LoginPage clickLogInForFailer() {
-		click(locateElement("class", "decorativeSubmit"));
+	@Given("enter username as (.*)")
+	public LoginPage enterUsername(String data) throws InterruptedException {
+		clearAndType(eleUsername, data);
+		//Thread.sleep(3000);
 		return this;		
 	}
 	
-	@Given("Verify the error message (.*)")
-	public LoginPage verifyErrorMsg(String data) {
-		verifyPartialText(locateElement("id", "errorDiv"), data);
-		return this;
+	
+	@FindBy(how=How.ID,using="password")
+	private WebElement elePassword;
+
+	
+	@Given("enter password as (.*)")
+	public LoginPage enterPassword(String data) throws InterruptedException {
+		clearAndType(elePassword, data);
+		
+		return this;		
+	}
+	
+	@FindBy(how=How.CLASS_NAME,using="decorativeSubmit")
+	private WebElement eleLogin;
+
+	
+	@When("click on login button")
+	public HomePage clickLogin() {
+		click(eleLogin);
+		return new HomePage();		
 	}
 	
 	

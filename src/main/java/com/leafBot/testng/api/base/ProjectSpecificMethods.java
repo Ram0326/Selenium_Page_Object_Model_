@@ -14,8 +14,7 @@ import utils.DataLibrary;
 
 public class ProjectSpecificMethods extends SeleniumBase {
 
-	public String dataSheetName;
-	public static String leadId="";
+	public String dataSheetName;		
 
 	@DataProvider(name = "fetchData")
 	public Object[][] fetchData() throws IOException {
@@ -24,13 +23,14 @@ public class ProjectSpecificMethods extends SeleniumBase {
 
 	@BeforeMethod
 	public void beforeMethod() {
+		
 		driver = startApp("chrome", "http://leaftaps.com/opentaps");
 		node = test.createNode(testCaseName);
 	}
 
 	@AfterMethod
 	public void afterMethod() {
-		close();
+		//close();
 	}
 
 

@@ -2,6 +2,8 @@ package utils;
 
 import java.io.IOException;
 
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -11,10 +13,12 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.ExtentHtmlReporterConfiguration;
 
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 public abstract class Reporter extends AbstractTestNGCucumberTests{
+	
 	
 	public static ExtentHtmlReporter reporter;
 	public static ExtentReports extent;
@@ -27,7 +31,7 @@ public abstract class Reporter extends AbstractTestNGCucumberTests{
 	public void startReport() {
 		reporter = new ExtentHtmlReporter("./reports/result.html");
 		reporter.setAppendExisting(true); 
-		extent = new ExtentReports();
+	    extent = new ExtentReports();
 		extent.attachReporter(reporter);
 	}
 	
@@ -42,17 +46,19 @@ public abstract class Reporter extends AbstractTestNGCucumberTests{
     public void reportStep(String dec, String status,boolean bSnap ) {
     	MediaEntityModelProvider img = null;
 		if(bSnap && !status.equalsIgnoreCase("INFO")){
-
+System.out.println("before taking snap "+bSnap);
 			long snapNumber = 100000L;
 			snapNumber = takeSnap();
 			try {
 				img = MediaEntityBuilder.createScreenCaptureFromPath
 						("./../reports/images/"+snapNumber+".jpg").build();
+				System.out.println(snapNumber);
 			} catch (IOException e) {
 				
 			}
 		}
     	if(status.equalsIgnoreCase("pass")) {
+    		System.out.println(dec);
     		node.pass(dec, img);
     	} else if(status.equalsIgnoreCase("fail")) {
     		node.fail(dec, img); 
@@ -60,6 +66,8 @@ public abstract class Reporter extends AbstractTestNGCucumberTests{
     }
     
     public void reportStep(String desc, String status) {
+    	//System.out.println(desc);
+    	//System.out.println(status);
 		reportStep(desc, status, true);
 	}
 
